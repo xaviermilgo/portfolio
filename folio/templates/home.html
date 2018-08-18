@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %}
+<div>
+    <div class="sidebar d-none d-md-block">
+        {% include 'sidebar.html' %}
+    </div>
+    <div class="content sttlll text-white tab-content" id="myTabContent">
+        {%  include 'body.html' %}
+    </div>
+</div>
+{% endblock %}

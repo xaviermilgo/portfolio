@@ -1,0 +1,122 @@
+
+.float-down{
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+}
+
+.myimage{
+  background-image: url(/static/img/xavier.jpg);
+  height: 100vh;
+  color: white;
+  background-size: cover;
+  position: relative;
+}
+
+.myinfo{
+  background-color: #000c;
+  opacity: 0.9;
+  padding: 23px;
+  position: absolute;
+  top: 50%;
+  display: inline-table;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 378px;
+}
+
+.projimag{
+  height: 160px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.skill{
+  width: 150px;
+  display: inline-block;
+  margin: auto;
+  vertical-align: top;
+}
+
+.skills {
+    height: 181px;
+}
+.sttlll{
+ background-color: #010221!important;
+}
+.project{
+  display: inline-block;
+}
+.fixed-left{
+    height: 100vh;
+    width: 180px;
+    position: fixed;
+    background: black;
+}
+.nav-item{
+    display: flex;
+}
+.nav-item>a{
+    color: white;
+}
+.fixed-left>.nav-item>a{
+    font-size: 20pt;
+}
+.sidebar{
+    width: 180px;
+    float: left;
+    height: 100vh;
+}
+.content {
+    float: left;
+    width: calc(100% - 180px);
+}
+.full{
+    min-height: 100vh;
+    background-color: inherit;
+}
+@media only screen and (max-width: 767px) {
+    .content{
+        width: 100vw;
+        height: calc(100vh - 40px);
+    }
+    .projdesc{
+        width: 58%;
+        float: left;
+    }
+    .projimag{
+        width: 42%;
+        float: left;
+    }
+    .myimage{
+        height: calc(100vh - 40px);
+    }
+    .full{
+        min-height: calc(100vh - 40px);
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    .nav-item>a>span>small{
+        display: none;
+    }
+}
+
+.proj{
+    width: 100%;
+    float: left;
+}
+body.modal-open .supreme-container{
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+.notpr{
+    width: unset;
+    float: unset;
+    height: 60vh;
+}
