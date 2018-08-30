@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="m-0 myimage text-center tab-pane fade show active " id="home"  role="tabpanel">
   <div class="myinfo rounded">
       <h1><b><big>Xavier  Kibet</big></b></h1>
@@ -6,29 +8,49 @@
 </div>
 
 <div class="skills tab-pane fade full" id="skills"  role="tabpanel">
-{% for skill in skills %}
-  <div class="skill text-center">
-    <img class="p-4" src="{{ skill.img.url }}" height="100px">
-    <h3 class="pt-2">{{ skill.name }}</h3>
-  </div>
-{% endfor %}
+    <canvas id="skills_canvas" width="200px" height="200px"></canvas>
+    <div id="Tags" role="tablist">
+    {% for skill in skills %}
+      <a  data-toggle="tab" data-target="#{{ skill }}">
+        <img class="p-4" src="{{ skill.img.url }}" height="60px" width="60px" data-toggle="popover" title="{{ skill.name }}">
+      </a>
+    {% endfor %}
+    </div>
+    <div id="skillspanel" role="tabpanel">
+        {% for skill in skills %}
+        <div class="tab-pane fade">
+            <h5>{{ skill.name }}</h5>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 <div class=" tab-pane fade full" id="projects"  role="tabpanel">
 {% for project in projects%}
-    <div class="m-2 border border-secondary rounded p-2 col-10 col-md-5 col-lg-3 project align-top">
+    <div class="my-2 border border-secondary rounded p-2 col-10 col-md-5 col-lg-3 project align-top">
      <div class="proj">
       <div style="background-image: url({{project.image.url}})" class="projimag d-none d-md-block"></div>
       <div style="background-image: url({{project.imagephone.url}})" class="projimag d-md-none"></div>
       <div class="p-2 projdesc">
           <h5 class="card-title"><b>{{project.title}}</b></h5>
         <p class="card-text">{{project.description}}</p>
+       <div class="p-0 m-0 justify-content-around d-flex">
+        {% for skl in project.skills.all %}
+            <img src="{{ skl.img.url }}" width="20px" height="20px" data-toggle="popover" title="{{ skl.name }}">
+        {% endfor %}
+      </div>
       </div>
      </div>
     <div class="mt-2">
         <button data-target="#project{{ project.id }}" data-toggle="modal" class="btn btn-outline-warning m-1">Preview</button>
-        <a href="{{project.link}}" target="_blank" class="btn btn-outline-success m-1">Explore</a>
     </div>
     </div>
 {%endfor%}
+</div>
+
+<div class="m-0 text-center tab-pane fade" id="aboutme"  role="tabpanel">
+{#  <div class="myinfo rounded">#}
+    <h1><b><big>Xavier  Kibet</big></b></h1>
+    <h5>Full stack web developer</h5>
+{#  </div>#}
 </div>

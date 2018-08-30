@@ -58,7 +58,8 @@
     display: flex;
 }
 .nav-item>a{
-    color: white;
+    color: white!important;
+    cursor: pointer!important;
 }
 .fixed-left>.nav-item>a{
     font-size: 20pt;
@@ -118,5 +119,23 @@ body.modal-open .supreme-container{
 .notpr{
     width: unset;
     float: unset;
-    height: 60vh;
+    height: 53vh;
+}
+.removeshit{
+    pointer-events: auto!important;
+    max-width: 80vw!important;
+}
+@media only screen and (max-width: 577px){
+    .removeshit{
+        max-width: unset!important;
+    }
+}
+.emb{
+    height: 57vh;
+    width: 100%;
+}
+#skills_canvas{
+    width: 65vw;
+    max-width: 350px;
+    max-height: 350px;
 }
