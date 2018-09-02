@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfolio',
         'DB_USER': 'xv',
-        'DB_PASSWORD': 'greatkali'
+        'DB_PASSWORD': 'g'
     }
 }
 if False:

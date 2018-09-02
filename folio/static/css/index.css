@@ -2,11 +2,11 @@
 .float-down{
   position: absolute;
   bottom: 0;
-  right: 0px;
+  right: 0;
 }
 
 .myimage{
-  background-image: url(/static/img/xavier.jpg);
+  background-image: url('/static/img/xavier.jpg');
   height: 100vh;
   color: white;
   background-size: cover;
@@ -76,11 +76,12 @@
 .full{
     min-height: 100vh;
     background-color: inherit;
+    height: auto;
 }
 @media only screen and (max-width: 767px) {
     .content{
         width: 100vw;
-        height: calc(100vh - 40px);
+        height: calc(100vh - 50px);
     }
     .projdesc{
         width: 58%;
@@ -91,10 +92,10 @@
         float: left;
     }
     .myimage{
-        height: calc(100vh - 40px);
+        height: calc(100vh - 50px);
     }
     .full{
-        min-height: calc(100vh - 40px);
+        min-height: calc(100vh - 50px);
         height: auto;
     }
 }
@@ -108,13 +109,6 @@
 .proj{
     width: 100%;
     float: left;
-}
-body.modal-open .supreme-container{
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
 }
 .notpr{
     width: unset;
