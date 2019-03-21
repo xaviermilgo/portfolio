@@ -1,0 +1,63 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/portfolio
+    docker:
+
+      - image: circleci/python:3.7.1
+        environment:
+          SECRET_KEY: testing_secret_key
+          DATABASE_URL: postgresql://root@localhost/circle_test
+
+      - image: circleci/postgres:9.4
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle_test
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "requirements.txt" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install Dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: Making migrations and Migrating
+          command: |
+            . venv/bin/activate
+          # list apps
+          export apps=$(./manage.py shell -c "from django.conf import settings;print(' '.join(x for x in settings.INSTALLED_APPS if '.' not in x))")
+          # make migrations
+          python manage.py makemigrations $apps
+          # migrate
+          python manage.py migrate
+
+
+      - run:
+          name: Running tests
+          command: |
+            . venv/bin/activate
+            python manage.py test
+      - run:
+        name: SSH and Deploy
+        command: |
+          ssh root@reivhax.me -t "cd portfolio;bash pull.sh"
+
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports

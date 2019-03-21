@@ -148,5 +148,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 django_heroku.settings(locals())
