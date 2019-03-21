@@ -5,7 +5,8 @@ source virtual/bin/activate
 # stop server
 pkill gunicorn
 # pull code
-git pull origin master
+git fetch --all
+git reset --hard origin/master
 # update requirements
 pip install -r requirements.txt
 # list apps
