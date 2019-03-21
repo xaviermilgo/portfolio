@@ -18,3 +18,5 @@ python manage.py migrate
 python manage.py collectstatic
 # start server
 bash start.sh &
+# sleep for more info
+sleep 20
