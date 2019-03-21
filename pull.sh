@@ -14,8 +14,10 @@ export apps=$(./manage.py shell -c "from django.conf import settings;print(' '.j
 python manage.py makemigrations $apps
 # migrate
 python manage.py migrate
+# ls sttic || mkdir staic
+ls static || mkdir static
 # collectstatic
-python manage.py collectstatic
+python manage.py collectstatic --no-input
 # start server
 bash start.sh &
 # sleep for more info
