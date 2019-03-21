@@ -7,5 +7,7 @@ from django.shortcuts import render
 
 def home(request):
     projects = Project.objects.all()
-    skills = Skill.objects.all()
+    backend_skills = Skill.objects.filter(type='Backend').all()
+    frontend_skills = Skill.objects.filter(type='Frontend').all()
+    infosec_skills = Skill.objects.filter(type='InfoSec').all()
     return render(request,'home.html',locals())

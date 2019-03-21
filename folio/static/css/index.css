@@ -12,7 +12,9 @@
   background-size: cover;
   position: relative;
 }
-
+.sttlll{
+  background-color: #010221!important;
+}
 .myinfo{
   background-color: #000c;
   opacity: 0.9;
@@ -38,11 +40,7 @@
   margin: auto;
   vertical-align: top;
 }
-
-.skills {
-    height: 181px;
-}
-.sttlll{
+body{
  background-color: #010221!important;
 }
 .project{
@@ -80,7 +78,7 @@
 }
 @media only screen and (max-width: 767px) {
     .content{
-        width: 100vw;
+        width: -webkit-fill-available;
         height: calc(100vh - 50px);
     }
     .projdesc{
@@ -123,7 +121,7 @@
     .removeshit{
         max-width: unset!important;
     }
-}
+}`  `
 .emb{
     height: 57vh;
     width: 100%;
@@ -132,4 +130,18 @@
     width: 65vw;
     max-width: 350px;
     max-height: 350px;
+}
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+.point{
+  cursor: pointer;
 }

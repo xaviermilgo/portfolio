@@ -1,0 +1,33 @@
+.circle-container {
+  position: relative;
+  width: 14em;
+  height: 14em;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  margin: 4em auto 4em;
+  border: solid 5px #404041a8;
+}
+.circle-container > * {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6em;
+  height: 6em;
+  margin: -3em;
+}
+
+.circle-container .img {
+  display: block;
+  max-width: 100%;
+  border-radius: 25%;
+  filter: grayscale(50%);
+  margin-left: 12px;
+  background-color: #051344;
+  border: solid 1px #404041a8;
+  transition: 0.15s;
+}
+.circle-container .img:hover, .circle-container .img:active {
+  filter: grayscale(0);
+}

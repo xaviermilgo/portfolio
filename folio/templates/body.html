@@ -1,58 +1,69 @@
 {% load static %}
 
-<div class="m-0 myimage text-center tab-pane fade show active " id="home"  role="tabpanel">
+<div class="m-0 myimage text-center show active " id="home"  role="tabpanel">
   <div class="myinfo rounded">
       <h1><b><big>Xavier  Kibet</big></b></h1>
-    <h5>Full stack web developer</h5>
+      <h5>Software Engineer</h5>
+    <h5 class="border-top border-secondary">Ethical Hacker</h5>
   </div>
 </div>
 
-<div class="skills tab-pane fade full" id="skills"  role="tabpanel">
-    <canvas id="skills_canvas" width="200px" height="200px"></canvas>
-    <div id="Tags" role="tablist">
-    {% for skill in skills %}
-      <a  href="javascript:toggle($('#info{{ skill.pk }}'))">
-        <img class="p-4" src="{{ skill.img.url }}" height="60px" width="60px">
-      </a>
+<div class="my-4 text-center pb-4 pt-2" role="tabpanel">
+<h5 id="aboutme">About me</h5>
+    <div><b>I am an enthusiastic computer programmer and ethical hacker.</b></div>
+    <div class="container font-weight-light">I love spending most of my time advancing my skills in programming by solving challenges and developing software.
+    I started off by learning python online on sololearn then, after high school, I went to Moringa school where I spent 1200 hours over 6 months learning full-stack web development with python professionally.
+    In my free time, I love completing challenges on codewars.com I currently have over 3400 honor on codewars.</div>
+    <div class="my-3"><img style="max-width: 80vw;" src="https://www.codewars.com/users/reivhax/badges/large"></div>
+</div>
+
+<div class="skills" role="tabpanel">
+    <h5 id="skills">Skills</h5>
+    <div class="mb-4 mx-4">
+    <nav class="nav nav-justified" id="myTab" role="tablist">
+      <button class="nav-item nav-link btn btn-sm rounded-0 btn-outline-dark text-white active" id="home-tab" data-toggle="tab" data-target="#frontend_skills" role="tab" aria-controls="Backend" aria-selected="true">Frontend</button>
+      <button class="nav-item nav-link btn btn-sm rounded-0 btn-outline-dark text-white" id="profile-tab" data-toggle="tab" data-target="#backend_skills" role="tab" aria-controls="Frontend" aria-selected="false">Backend</button>
+      <!-- <button class="nav-item nav-link btn btn-sm rounded-0 btn-outline-dark text-white" id="contact-tab" data-toggle="tab" data-target="#infosec_skills" role="tab" aria-controls="Security" aria-selected="false">Security</button> -->
+    </nav>
+  <div class="tab-content">
+    <ul class='circle-container tab-pane fade ' id="backend_skills" role="tabpanel">
+    {% for skill in backend_skills %}
+        <li style='transform: rotate({{skill.rotate}}) translate(0em, -7em) rotate({{skill.rot}});'>
+          <div class="img">
+            <img src="{{ skill.img.url }}" class="p-2" height="70px" width="70px">
+            <div class="font-weight-light">{{skill.name}}</div>
+          </div>
+        </li>
     {% endfor %}
-    </div>
-    <div id="skillsc" class="container pb-3">
-        {% for skill in skills %}
-        <fieldset class="border row border-dark rounded mb-3" style="display: none" id="info{{ skill.pk }}">
-            <legend class="border border-dark p-1" style="width: auto">{{ skill.name }}</legend>
-            <div>
-                I have {{ skill.projects.count }} project{% if skill.projects.count != 1 %}s{% endif %} in {{ skill.name }}.
+    </ul>
+    <ul class='circle-container tab-pane fade show active' role='tabpanel' id="frontend_skills">
+      {% for skill in frontend_skills %}
+          <li style='transform: rotate({{skill.rotate}}) translate(0em, -7em) rotate({{skill.rot}});'>
+            <div class="img">
+              <img src="{{ skill.img.url }}" class="p-2" height="70px" width="70px">
+              <div class="font-weight-light">{{skill.name}}</div>
             </div>
-            <div>
-                {% for project in skill.projects.all %}
-                    <div class="my-2 border border-secondary rounded p-2 col-10 col-md-5 col-lg-3 project align-top">
-                     <div class="proj">
-                      <div style="background-image: url({{project.image.url}})" class="projimag d-none d-md-block"></div>
-                      <div style="background-image: url({{project.imagephone.url}})" class="projimag d-md-none"></div>
-                      <div class="p-2 projdesc">
-                          <h5 class="card-title"><b>{{project.title}}</b></h5>
-                        <p class="card-text">{{project.description}}</p>
-                       <div class="p-0 m-0 justify-content-around d-flex">
-                        {% for skl in project.skills.all %}
-                            <img src="{{ skl.img.url }}" width="20px" height="20px" data-toggle="popover" title="{{ skl.name }}">
-                        {% endfor %}
-                      </div>
-                      </div>
-                     </div>
-                    <div class="mt-2">
-                        <button data-target="#project{{ project.id }}" data-toggle="modal" class="btn btn-outline-warning m-1">Preview</button>
-                    </div>
-                    </div>
-                {% endfor %}
+          </li>
+      {% endfor %}
+    </ul>
+    <!-- Yeah I also considered this <ul class='circle-container tab-pane fade' role='tabpanel' id="infosec_skills">
+      {% for skill in infosec_skills %}
+          <li style='transform: rotate({{skill.rotate}}) translate(0em, -7em) rotate({{skill.rot}});'>
+            <div class="img">
+              <img src="{{ skill.img.url }}" class="p-2" height="70px" width="70px">
+              <div class="font-weight-light">{{skill.name}}</div>
             </div>
-        </fieldset>
-        {% endfor %}
+          </li>
+      {% endfor %}
+    </ul> -->
+  </div>
     </div>
 </div>
 
-<div class=" tab-pane fade full" id="projects"  role="tabpanel">
+<div role="tabpanel" class="mb-4 pt-4">
+  <h5 id="projects">Projects</h5>
 {% for project in projects%}
-    <div class="my-2 border border-secondary rounded p-2 col-10 col-md-5 col-lg-3 project align-top">
+    <div class="my-2 rounded border mx-1 p-2 col-10 col-md-5 col-lg-3 project align-top" style="border-color: #404041a8!important">
      <div class="proj">
       <div style="background-image: url({{project.image.url}})" class="projimag d-none d-md-block"></div>
       <div style="background-image: url({{project.imagephone.url}})" class="projimag d-md-none"></div>
@@ -73,12 +84,20 @@
 {%endfor%}
 </div>
 
-<div class="m-0 text-center tab-pane fade full" id="aboutme"  role="tabpanel">
-<span>
-    <img src="{% static 'img/me.png' %}">
-    I love spending most of my time advancing my skills in programming by solving challenges and developing software.
-    I started off by learning javascript online then, after high school, I went to Moringa school where I spent 1200 hours over 6 months learning full-stack web development with python professionally.
-    In my free time, I love completing challenges on codewars.com I currently have over 2500 honor on codewars.
-    <img src="https://www.codewars.com/users/reivhax/badges/large">
-</span>
+<div class="text-center pb-3 pt-2 border-top border-secondary" role="tabpanel">
+<h5 id="contact">Contact me</h5>
+  <div style="font-size: 1.5em;" class="row p-0">
+    <div class="col-6 col-sm-4 m-auto point">
+    <a href="mailto:xavierkibet@gmail.com" class="nostyle">
+      <i class="fa fa-envelope" aria-hidden="true"></i>
+    </a><div class="font-weight-light" style="font-size: 0.5em;">xavierkibet@gmail.com</br>Email</div></div>
+    <div class="col-6 col-sm-4 m-auto point">
+    <a href="tel:+254757724928" class="nostyle">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+    </a><div class="font-weight-light" style="font-size: 0.5em;">+254757724928</br>Phone</div></div>
+    <div class="col-6 col-sm-4 m-auto point">
+    <a href="https://www.linkedin.com/in/xavier-kibet-34733916a" class="nostyle" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a><div class="font-weight-light" style="font-size: 0.5em;"><div>Xavier Kibet</div>Linked In</div></div>
+  </div>
 </div>
