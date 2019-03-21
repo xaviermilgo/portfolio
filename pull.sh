@@ -21,4 +21,4 @@ python manage.py collectstatic --no-input
 # start server
 bash start.sh &
 # sleep for more info
-sleep 20
+sleep 10
