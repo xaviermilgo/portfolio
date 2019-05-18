@@ -57,7 +57,7 @@ jobs:
       - run:
           name: SSH and Deploy
           command: |
-            ssh -o "StrictHostKeyChecking=no" root@reivhax.me -t "cd portfolio;bash pull.sh"
+            ssh -o "StrictHostKeyChecking=no" root@reivhax.me -t "cd /opt/portfolio;bash pull.sh"
 
       - store_artifacts:
           path: test-reports
