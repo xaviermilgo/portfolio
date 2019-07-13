@@ -14,6 +14,6 @@ python-decouple==3.1
 pytz==2018.9
 requests==2.21.0
 ua-parser==0.8.0
-urllib3==1.24.1
+urllib3==1.24.2
 user-agents==1.1.0
 whitenoise==4.0
