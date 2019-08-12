@@ -3,7 +3,15 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class Project(models.Model):
+class OrderedModel(models.Model):
+    order = models.IntegerField(default=0)
+
+    class Meta:
+        abstract = True
+        ordering = ['order', ]
+
+
+class Project(OrderedModel):
     title = models.TextField()
     description = models.TextField()
     link = models.TextField(blank=True, null=True)
@@ -17,7 +25,7 @@ class Project(models.Model):
         return self.title
 
 
-class Skill(models.Model):
+class Skill(OrderedModel):
     parent = models.ForeignKey('self', related_name='children', on_delete=models.CASCADE, null=True, blank=True)
     children_type = models.TextField(default='skills')
     name = models.TextField()
@@ -28,7 +36,7 @@ class Skill(models.Model):
         return self.name
 
 
-class Contact(models.Model):
+class Contact(OrderedModel):
     type = models.TextField()
     icon_type = models.TextField(choices=(
         ('fab', 'Brand Icons'),
@@ -44,7 +52,7 @@ class Contact(models.Model):
         return self.text
 
 
-class Profile(models.Model):
+class Profile(OrderedModel):
     name = models.TextField()
     title = models.TextField()
     secondaryTitle = models.TextField()
