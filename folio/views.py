@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from django.http import JsonResponse
 from folio.serializers import SkillSerializer, ProjectSerializer, ContactSerializer, ProfileSerializer
 from .models import Project, Skill, Contact, Profile
