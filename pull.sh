@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # create virtual
 python3 -m venv virtual
 # activate virtual
@@ -19,7 +20,13 @@ python manage.py migrate
 ls static || mkdir static
 # collectstatic
 python manage.py collectstatic --no-input
-# start server
+# start api
 bash start.sh &
+# interface
+cd resources/interface/
+# npm install
+npm install
+# build
+npm run build
 # sleep for more info
 sleep 10
