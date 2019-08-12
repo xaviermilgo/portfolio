@@ -90,7 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # CORS
-CORS_ORIGIN_REGEX_WHITELIST = config('CORS_ORIGIN_REGEX_WHITELIST', cast=Csv(), default=[])
+CORS_ORIGIN_REGEX_WHITELIST = config('CORS_ORIGIN_REGEX_WHITELIST', cast=Csv(), default='')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
