@@ -108,7 +108,7 @@ class SkillsGraph extends Component {
                             shouldCollapseNeighborNodes={true}
                             translate={translation}
                             data={data}
-                            pathFunc='elbow'
+                            // pathFunc='elbow'
                             orientation='vertical'
                             allowForeignObjects
                             useCollapseData
