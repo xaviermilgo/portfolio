@@ -21,6 +21,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 INSTALLED_APPS = [
     'folio',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -87,7 +89,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# CORS
+CORS_ORIGIN_REGEX_WHITELIST = config('CORS_ORIGIN_REGEX_WHITELIST', cast=Csv(), default=[])
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
