@@ -1,7 +1,6 @@
 .idea/
 *.pyc
 __pycache__/
-latest.dump
 virtual/
-staticfiles/
 .env
+media/
