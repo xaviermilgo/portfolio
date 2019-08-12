@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from .models import Project, Skill
-from django.shortcuts import render
+from django.http import JsonResponse
+from folio.serializers import SkillSerializer, ProjectSerializer, ContactSerializer, ProfileSerializer
+from .models import Project, Skill, Contact, Profile
 
-# Create your views here.
 
-def home(request):
-    projects = Project.objects.all()
-    backend_skills = Skill.objects.filter(type='Backend').all()
-    frontend_skills = Skill.objects.filter(type='Frontend').all()
-    infosec_skills = Skill.objects.filter(type='InfoSec').all()
-    return render(request,'home.html',locals())
+def skills_view(request):
+    data = {
+        "basicInfo": ProfileSerializer(Profile.objects.filter(active=True).first()).data,
+        "skills": SkillSerializer(Skill.objects.filter(parent=None), many=True).data,
+        "projects": ProjectSerializer(Project.objects, many=True).data,
+        "contacts": ContactSerializer(Contact.objects, many=True).data,
+    }
+    return JsonResponse(data)
