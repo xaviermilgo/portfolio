@@ -1,5 +1,6 @@
 import React from "react";
-import resolveAsset from "../assets";
+import resolveAsset from "../../assets";
+import './modal.css';
 
 class Project extends React.Component{
     render() {
@@ -19,10 +20,11 @@ class Project extends React.Component{
             ...imageBackground,
             backgroundImage: `url(${resolveAsset(project['image_phone'])})`
         };
+        console.log(project);
         return (
             <div className="p-3 m-3 col-12 col-sm-5 col-md-4 col-lg-3 d-flex flex-column shadow rounded" style={{backgroundColor: '#041232'}}>
-                <div className='position-relative w-100 h-100'>
-                    <div>
+                <div className='position-relative w-100 h-100 d-flex flex-column'>
+                    <div className='flex-grow-1'>
                         <div style={imageBackgroundLarge} className="w-100 d-none d-md-block"/>
                         <div style={imageBackgroundPhone} className="w-100 d-md-none"/>
                         <div className="p-2 projdesc">
@@ -37,15 +39,19 @@ class Project extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className='position-absolute w-100' style={{bottom: 0}}>
-                        <button className="btn btn-outline-warning rounded-0">
-                            Preview
-                        </button>
-                    </div>
-                    <div className='invisible'>
-                        <button className="btn btn-outline-warning rounded-0">
-                            Preview
-                        </button>
+                    <div className='w-100 d-flex justify-content-around mt-4 border-secondary border-top pt-3'>
+                        <a href={project['repo_link']} target='_blank' rel='noreferrer noopener'>
+                            <button className='btn btn-outline-primary'>
+                                View Code
+                            </button>
+                        </a>
+                        {project['live']?(
+                            <a href={project['link']} target='_blank' rel='noreferrer noopener'>
+                                <button className='btn btn-outline-success'>
+                                    View Site
+                                </button>
+                            </a>
+                        ):null}
                     </div>
                 </div>
             </div>
@@ -54,6 +60,12 @@ class Project extends React.Component{
 }
 
 export default class ProjectsView extends React.Component{
+    state = {
+        modalData: undefined
+    };
+    showModal(modalData){
+        this.setState({modalData})
+    }
     render() {
         const {projects} = this.props;
         return (

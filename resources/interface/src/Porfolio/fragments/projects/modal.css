@@ -1,0 +1,37 @@
+@keyframes custom-modal-animation {
+    from{
+        backdrop-filter: blur(0);
+    }
+    to {
+        backdrop-filter: blur(10px);
+    }
+}
+@keyframes custom-modal-body-animation {
+    to {
+        transform: scale(1);
+    }
+}
+.custom-modal{
+    background: transparent;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -10;
+    overflow: hidden;
+}
+.custom-modal.open{
+    animation: custom-modal-animation 400ms forwards alternate ease-in;
+    z-index: 1040;
+}
+.custom-modal.closed{
+    animation: custom-modal-animation 200ms backwards alternate ease-in;
+}
+.custom-modal-body{
+    transform: scale(0);
+    z-index: -11;
+}
+.custom-modal.open .custom-modal-body{
+    z-index: 1050;
+    animation: custom-modal-body-animation 300ms forwards alternate ease-in;
+}
