@@ -39,7 +39,7 @@ class Project extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className='w-100 d-flex justify-content-around mt-4 border-secondary border-top pt-3'>
+                    <div className='w-100 d-flex justify-content-around pt-4 border-secondary'>
                         <a href={project['repo_link']} target='_blank' rel='noreferrer noopener'>
                             <button className='btn btn-outline-primary'>
                                 View Code
