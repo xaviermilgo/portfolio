@@ -25,7 +25,7 @@ library.add(
 );
 
 const rootStyle = {
-    background: 'linear-gradient(135deg, rgb(1, 2, 33), rgb(12, 15, 100)) fixed'
+    background: 'linear-gradient(135deg, rgb(1, 2, 33), rgb(12, 15, 100))'
 };
 
 export default class PortFolio extends  Component{
