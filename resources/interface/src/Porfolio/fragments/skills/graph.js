@@ -26,9 +26,9 @@ class Label extends React.Component{
                 {nodeData._children &&
                 <div className='border-dark border-top w-100'>
                     {nodeData._collapsed?(
-                        <span>{children_type} <span className='fa fa-caret-square-o-down'/></span>
+                        <span style={{fontSize: '14px'}}>{children_type} <span className='fa fa-caret-square-o-down'/></span>
                     ):(
-                        <span>Hide <span className='fa fa-caret-square-o-up'/></span>
+                        <span style={{fontSize: '14px'}}>Hide <span className='fa fa-caret-square-o-up'/></span>
                     )}
                 </div>
                 }
