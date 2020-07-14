@@ -40,18 +40,20 @@ class Project extends React.Component{
                         </div>
                     </div>
                     <div className='w-100 d-flex justify-content-around pt-4 border-secondary'>
+                           {project['repo_link'] !== '#' &&
                         <a href={project['repo_link']} target='_blank' rel='noreferrer noopener'>
                             <button className='btn btn-outline-primary'>
                                 View Code
                             </button>
                         </a>
-                        {project['live']?(
+                        }
+                        {project['live'] &&
                             <a href={project['link']} target='_blank' rel='noreferrer noopener'>
                                 <button className='btn btn-outline-success'>
                                     View Site
                                 </button>
                             </a>
-                        ):null}
+                        }
                     </div>
                 </div>
             </div>
