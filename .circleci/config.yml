@@ -8,11 +8,12 @@ jobs:
         environment:
           SECRET_KEY: testing_secret_key
           ALLOWED_HOSTS: 'localhost'
-          DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+          DATABASE_URL: postgresql://root:qwnfmokqwngojng012421ojeg@localhost/circle_test?sslmode=disable
 
       - image: circleci/postgres:9.4
         environment:
           POSTGRES_USER: root
+          POSTGRES_PASSWORD: qwnfmokqwngojng012421ojeg
           POSTGRES_DB: circle_test
 
     steps:
