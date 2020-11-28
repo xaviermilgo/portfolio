@@ -14,7 +14,7 @@ import {
 import {faLinkedin, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
 import NavBar from "./fragments/navbar";
 import "./index.css";
-
+import portfolioInfo from "../api.json";
 
 library.add(
     faEnvelope, faPhone,
@@ -48,21 +48,8 @@ export default class PortFolio extends  Component{
         }
     }
 
-    componentDidMount() {
-        fetch(`${process.env.REACT_APP_HOST_URL}api/`)
-            .then(data=>data.json())
-            .then(data =>{
-                setTimeout(()=>this.setState({
-                    skills: data['skills'],
-                    projects: data['projects'],
-                    contacts: data['contacts'],
-                    basicInfo: data['basicInfo'],
-                    loading: false
-                }), 500)
-            })
-    }
     render() {
-        const {skills, projects, contacts, basicInfo, refs, loading} = this.state;
+        const {skills, projects, contacts, basicInfo, refs, loading} = portfolioInfo;
         const {landingSection, aboutSection, skillsSection, projectsSection, contactSection} = refs;
         if (loading){
             return (
