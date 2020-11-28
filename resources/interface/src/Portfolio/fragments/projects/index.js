@@ -1,5 +1,4 @@
 import React from "react";
-import resolveAsset from "../../assets";
 import './modal.css';
 
 class Project extends React.Component{
@@ -14,11 +13,11 @@ class Project extends React.Component{
         };
         const imageBackgroundLarge = {
             ...imageBackground,
-            backgroundImage: `url(${resolveAsset(project['image'])})`
+            backgroundImage: `url(${project['image']})`
         };
         const imageBackgroundPhone = {
             ...imageBackground,
-            backgroundImage: `url(${resolveAsset(project['image_phone'])})`
+            backgroundImage: `url(${project['image_phone']})`
         };
         console.log(project);
         return (
@@ -33,7 +32,7 @@ class Project extends React.Component{
                             <div className="p-0 m-0 justify-content-around d-flex">
                                 {project.skills.map(
                                     skl => (
-                                        <img src={resolveAsset(skl.img)} key={`${project.title}-${skl.name}`} alt={skl.name} title={skl.name} width={25}/>
+                                        <img src={skl.img} key={`${project.title}-${skl.name}`} alt={skl.name} title={skl.name} width={25}/>
                                     )
                                 )}
                             </div>

@@ -14,7 +14,7 @@ import {
 import {faLinkedin, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
 import NavBar from "./fragments/navbar";
 import "./index.css";
-import portfolioInfo from "../api.json";
+import portfolioInfo from "../api.js";
 
 library.add(
     faEnvelope, faPhone,
@@ -44,26 +44,16 @@ export default class PortFolio extends  Component{
             projects: [],
             contacts: [],
             refs: refs,
-            loading: true
         }
     }
 
     render() {
-        const {skills, projects, contacts, basicInfo, refs, loading} = portfolioInfo;
-        const {landingSection, aboutSection, skillsSection, projectsSection, contactSection} = refs;
-        if (loading){
-            return (
-                <div style={rootStyle} className='vh-100 vw-100 d-flex align-items-center justify-content-center'>
-                    <div className="spinner">
-                        <div className="dot1"/>
-                        <div className="dot2"/>
-                    </div>
-                </div>
-            )
-        }
+        const {skills, projects, contacts, basicInfo} = portfolioInfo;
+        const {landingSection, aboutSection, skillsSection, projectsSection, contactSection} = this.state.refs;
+
         return (
             <div style={rootStyle} className='text-white'>
-                <NavBar refs={refs}/>
+                <NavBar refs={this.state.refs}/>
                 <div>
                     <div>
                         <LandingView reference={landingSection} basicInfo={basicInfo}/>

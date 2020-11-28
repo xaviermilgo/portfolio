@@ -1,14 +1,12 @@
 import React from "react";
-import resolveAsset from "../assets";
 
 export default class LandingView extends React.Component{
     render() {
         const {name, title, secondaryTitle, backgroundImage} = this.props.basicInfo;
-        console.log(resolveAsset(backgroundImage));
         const dropStyle = {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundImage: `url(${resolveAsset(backgroundImage)})`
+            backgroundImage: `url(${backgroundImage})`
         };
         const floatStyle = {
             opacity: 0.9,

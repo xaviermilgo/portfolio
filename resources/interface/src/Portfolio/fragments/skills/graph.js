@@ -1,6 +1,5 @@
 import Tree from 'react-d3-tree';
 import React, { Component } from 'react';
-import resolveAsset from "../../assets";
 import "./graph.css";
 
 class Label extends React.Component{
@@ -17,7 +16,7 @@ class Label extends React.Component{
                     <div>
                         {img?(
                             <div>
-                                <img alt='' height={32} width={32} src={resolveAsset(img)}/>
+                                <img alt='' height={32} width={32} src={img}/>
                             </div>
                         ):null}
                         {name}
