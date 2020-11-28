@@ -3,5 +3,3 @@
 __pycache__/
 virtual/
 .env
-media/
-staticfiles/
