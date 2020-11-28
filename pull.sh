@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+git pull
 # interface
 cd resources/interface/
 # npm install
