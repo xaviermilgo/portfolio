@@ -1,6 +1,9 @@
+html {
+    scroll-behavior: smooth;
+}
 .pointer:hover{
     cursor: pointer;
 }
-html {
-    scroll-behavior: smooth;
+.linkBase{
+    stroke: #ffffff!important;
 }

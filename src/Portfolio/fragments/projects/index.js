@@ -19,7 +19,7 @@ class Project extends React.Component{
             ...imageBackground,
             backgroundImage: `url(${project['image_phone']})`
         };
-        console.log(project);
+
         return (
             <div className="p-3 m-3 col-12 col-sm-5 col-md-4 col-lg-3 d-flex flex-column shadow rounded" style={{backgroundColor: '#041232'}}>
                 <div className='position-relative w-100 h-100 d-flex flex-column'>
