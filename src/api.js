@@ -19,7 +19,7 @@ import chimayLarge from "./assets/media/projects/chimaylarge.png";
 import chimaySmall from "./assets/media/phoneprojects/chimaysmall.png";
 
 
-export default {
+const api = {
   "basicInfo": {
     "name": "Xavier Kibet",
     "title": "Software Developer",
@@ -207,3 +207,5 @@ export default {
     }
   ]
 }
+
+export default api;
