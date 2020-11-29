@@ -38,4 +38,5 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         source: "./build"
         debug: true
+        use_insecure_cipher: true
         target: "/var/www/reivhax.me"
