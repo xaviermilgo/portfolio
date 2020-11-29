@@ -20,7 +20,7 @@ jobs:
     - name: Build page
       run: npm run build
     - name: Deploy to portfolio
-      uses: appleboy/scp-action@v0.0.1
+      uses: appleboy/scp-action@master
       with:
         host: "reivhax.me"
         key: ${{ secrets.SSH_KEY }}
