@@ -25,4 +25,5 @@ jobs:
         host: "reivhax.me"
         key: ${{ secrets.SSH_KEY }}
         source: "./build"
+        debug: true
         target: "/var/www/reivhax.me"
