@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.478784ab.chunk.css",
+    "main.js": "/static/js/main.486f6182.chunk.js",
+    "main.js.map": "/static/js/main.486f6182.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0dc2dae2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0dc2dae2.js.map",
+    "static/css/2.f7a11ee5.chunk.css": "/static/css/2.f7a11ee5.chunk.css",
+    "static/js/2.6de396c6.chunk.js": "/static/js/2.6de396c6.chunk.js",
+    "static/js/2.6de396c6.chunk.js.map": "/static/js/2.6de396c6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.f7a11ee5.chunk.css.map": "/static/css/2.f7a11ee5.chunk.css.map",
+    "static/css/main.478784ab.chunk.css.map": "/static/css/main.478784ab.chunk.css.map",
+    "static/js/2.6de396c6.chunk.js.LICENSE.txt": "/static/js/2.6de396c6.chunk.js.LICENSE.txt",
+    "static/media/chimaylarge.5870c2ec.png": "/static/media/chimaylarge.5870c2ec.png",
+    "static/media/chimaysmall.c580a410.png": "/static/media/chimaysmall.c580a410.png",
+    "static/media/flask1.38bc7347.png": "/static/media/flask1.38bc7347.png",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/sqika.com__1_1.ee1c8d50.png": "/static/media/sqika.com__1_1.ee1c8d50.png",
+    "static/media/sqika.com__2.bac76d99.png": "/static/media/sqika.com__2.bac76d99.png",
+    "static/media/xavier.0a9ad65d.jpg": "/static/media/xavier.0a9ad65d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0dc2dae2.js",
+    "static/css/2.f7a11ee5.chunk.css",
+    "static/js/2.6de396c6.chunk.js",
+    "static/css/main.478784ab.chunk.css",
+    "static/js/main.486f6182.chunk.js"
+  ]
+}
