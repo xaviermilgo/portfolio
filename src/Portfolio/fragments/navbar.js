@@ -48,7 +48,7 @@ export default class NavBar extends React.Component{
                         ({ref, icon, text}, index)=>(
                             <li className="nav-item" key={index}>
                                 <div className="pointer" onClick={()=> NavBar.scrollTo(ref)}>
-                                    <FontAwesomeIcon icon={icon} className='h6 m-0'/>
+                                    <FontAwesomeIcon icon={icon} className='h6 m-0' style={{fontSize: '1.4em'}}/>
                                     <small className='d-none d-sm-block'>{text}</small>
                                 </div>
                             </li>
